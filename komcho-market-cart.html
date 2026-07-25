@@ -546,7 +546,7 @@
 
 <!-- 買い物を続ける -->
 <div class="continue-wrap">
-  <a class="continue-link" href="komcho-market-search.html" style="text-decoration:none;">
+  <a class="continue-link" href="komcho-market-search.html" onclick="if(document.referrer && document.referrer.includes('komcho-market')){history.back(); return false;}" style="text-decoration:none;">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
     買い物を続ける
   </a>
