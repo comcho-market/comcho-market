@@ -288,12 +288,12 @@
   <button class="header-back" onclick="history.back()">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
-  <div class="header-logo">
+  <a class="header-logo" href="komcho-market-top.html">
     <svg class="logo-icon" viewBox="0 0 60 48">
       <path transform="translate(30,24)" d="M -26 7 C -17 -17 5 -24 24 -10 C 12 5 -2 19 -21 24"/>
     </svg>
     <span class="logo-text">こむちょマーケット</span>
-  </div>
+  </a>
   <div class="header-spacer"></div>
 </header>
 
@@ -373,7 +373,7 @@
 <!-- 新規登録リンク -->
 <div class="register-link-wrap">
   アカウントをお持ちでない方は
-  <span class="register-link">新規登録（無料）</span>
+  <a href="komcho-market-terms.html" class="register-link" style="text-decoration:underline;">新規登録（無料）</a>
 </div>
 
 <!-- パスワードリセットモーダル -->
@@ -439,7 +439,7 @@
     // デモ：正しい組み合わせでログイン成功
     if (email === 'hanako@example.com' && pw === 'password') {
       showToast('ログインしました ✓');
-      setTimeout(() => { alert('TOPページへ移動します'); }, 800);
+      setTimeout(() => { window.location.href = 'komcho-market-top.html'; }, 800);
     } else {
       document.getElementById('loginError').classList.add('visible');
       document.getElementById('emailInput').classList.add('error');

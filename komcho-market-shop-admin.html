@@ -363,12 +363,12 @@
 
 <!-- HEADER -->
 <header class="header">
-  <div class="header-logo">
+  <a class="header-logo" href="komcho-market-top.html">
     <svg class="logo-icon" viewBox="0 0 60 48">
       <path transform="translate(30,24)" d="M -26 7 C -17 -17 5 -24 24 -10 C 12 5 -2 19 -21 24"/>
     </svg>
     <span class="logo-text">こむちょマーケット</span>
-  </div>
+  </a>
   <div class="header-title">ショップ管理</div>
   <button class="header-save" id="saveBtn">保存する</button>
 </header>
@@ -466,7 +466,7 @@
 <div class="section-block">
   <div class="block-title">商品管理</div>
   <div class="products-admin-list">
-    <div class="product-admin-item">
+    <a class="product-admin-item" href="komcho-market-product-admin.html" style="text-decoration:none;color:inherit;display:flex;">
       <div class="product-admin-thumb g1">🍯</div>
       <div class="product-admin-info">
         <div class="product-admin-name">完熟梅の無添加シロップ</div>
@@ -500,10 +500,8 @@
         <div class="product-admin-price">¥1,500</div>
         <div class="product-admin-badges"></div>
       </div>
-      <div class="edit-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
-    </div>
-  </div>
-  <button class="add-product-btn">
+      <div class="edit-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div></a>
+  <button class="add-product-btn" onclick="window.location.href='komcho-market-product-admin.html'">
     <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     商品を追加する
   </button>

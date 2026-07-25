@@ -379,7 +379,7 @@
 
 <!-- HEADER -->
 <header class="header">
-  <button class="header-back">
+  <button class="header-back" onclick="history.back()">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
   </button>
   <div class="header-title">商品編集</div>
@@ -642,7 +642,7 @@
 
 <!-- 商品削除 -->
 <div class="delete-product-wrap">
-  <button class="delete-product-btn">この商品を削除する</button>
+  <button class="delete-product-btn" onclick="if(confirm('この商品を削除しますか？')){ window.location.href='komcho-market-shop-admin.html'; }">この商品を削除する</button>
 </div>
 
 <!-- TOAST -->
