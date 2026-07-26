@@ -488,6 +488,28 @@
     }
     if (hasError) return;
 
+    // 送信ボタンを一時的に無効化（連打防止）
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+
+    // Web3Forms へ送信（実際にメールが届く処理）
+    const orderNum = document.getElementById('orderNumInput').value.trim();
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'e409be80-f2b3-4f06-9216-34a0cde7132e',
+        subject: 'こむちょマーケット お問い合わせ：' + catText,
+        from_name: 'こむちょマーケット お問い合わせフォーム',
+        category: catText,
+        order_number: orderNum,
+        name: name,
+        email: email,
+        message: msg
+      })
+    }).catch(() => {});
+
     // 完了画面へ
     document.getElementById('successCategory').textContent = catText;
     document.getElementById('successName').textContent = name;
