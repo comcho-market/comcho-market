@@ -335,6 +335,21 @@
   .nav-item.active .nav-home-icon {
     fill: var(--green-dark); stroke: var(--green-dark);
   }
+
+  /* ============ DESKTOP (≥900px) ============ */
+  @media (min-width: 900px) {
+    body { max-width: 1160px; padding-bottom: 40px; }
+    .header { padding: 12px 40px; }
+
+    .shop-top { padding: 36px 40px 28px; }
+    .section-block { padding: 28px 40px; border-radius: 16px; margin-bottom: 12px; border-bottom: none; box-shadow: var(--shadow-card); }
+    .shop-info-row { padding: 16px 40px; border-radius: 16px; margin-bottom: 12px; border-bottom: none; box-shadow: var(--shadow-card); }
+    .contact-wrap { padding-left: 40px; padding-right: 40px; }
+
+    .products-grid { grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+    .bottom-nav { display: none; }
+  }
 </style>
 </head>
 <body>

@@ -538,6 +538,21 @@
     stroke: currentColor; fill: none;
     stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
   }
+
+  /* ============ DESKTOP (≥900px) ============ */
+  @media (min-width: 900px) {
+    body { max-width: 1160px; padding-bottom: 60px; }
+    .header { padding: 16px 40px 0; }
+    .search-bar-wrap { padding: 0 40px; }
+    .filter-panel-inner { padding: 0 40px 16px; }
+    .category-chips { grid-template-columns: repeat(8, 1fr); }
+    .results-header { padding-left: 40px; padding-right: 40px; }
+    .products-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px; padding: 0 40px 16px;
+    }
+    .bottom-nav { display: none; }
+  }
 </style>
 </head>
 <body>

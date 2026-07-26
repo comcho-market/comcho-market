@@ -131,6 +131,12 @@
   .nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1; }
   .nav-icon { width: 22px; height: 22px; stroke: var(--text-sub); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .nav-label { font-size: 10px; color: var(--text-sub); }
+  /* ============ DESKTOP (≥900px) ============ */
+  @media (min-width: 900px) {
+    body { max-width: 720px; padding-bottom: 40px; }
+    .header { padding: 16px 32px; }
+    .bottom-nav { display: none; }
+  }
 </style>
 </head>
 <body>
