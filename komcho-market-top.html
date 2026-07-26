@@ -293,6 +293,55 @@
     stroke: currentColor; fill: none;
     stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
   }
+
+  /* ============ DESKTOP (≥900px) ============ */
+  @media (min-width: 900px) {
+    body { max-width: 1160px; padding-bottom: 60px; }
+
+    .header { padding: 20px 40px; }
+    .header-logo .logo-icon { width: 30px; height: 24px; }
+    .header-logo .logo-text { font-size: 18px; }
+    .header-icons { gap: 28px; }
+    .header-icons svg { width: 23px; height: 23px; }
+
+    .hero-wrap { margin: 24px 40px 0; aspect-ratio: 21 / 6; border-radius: 20px; }
+    .hero-photo-placeholder svg { width: 52px; height: 52px; }
+    .hero-photo-placeholder span { font-size: 14px; }
+    .hero-photo-placeholder span + span { font-size: 12px; }
+
+    .tagline { margin: 22px 40px 0; font-size: 13px; }
+
+    .section { margin: 40px 0; }
+    .categories-scroll {
+      padding: 4px 40px; overflow: visible;
+      justify-content: center; gap: 18px;
+    }
+    .cat-item { width: 96px; padding: 8px; }
+    .cat-icon { width: 66px; height: 66px; }
+    .cat-icon svg { width: 48px; height: 48px; }
+    .cat-label { font-size: 13px; }
+
+    .section-title h2 { font-size: 27px; }
+    .section-title .eyebrow { font-size: 12px; }
+
+    .products-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px; padding: 4px 40px 16px;
+    }
+    .product-img-grid { font-size: 52px; }
+    .product-name-grid { font-size: 13.5px; }
+    .product-price { font-size: 14.5px; }
+
+    .about-section { max-width: 760px; margin: 8px auto 36px; padding: 48px 60px; }
+    .about-lead { font-size: 21px; }
+
+    .banner { margin: 8px 40px 0; padding: 30px 44px; }
+    .banner-text h3 { font-size: 16px; }
+    .banner-text p { font-size: 13px; }
+    .banner-btn { font-size: 13px; padding: 11px 22px; }
+
+    .bottom-nav { display: none; }
+  }
 </style>
 </head>
 <body>
