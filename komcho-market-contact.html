@@ -377,13 +377,14 @@
   <div class="terms-wrap">
     <input type="checkbox" class="terms-checkbox" id="termsCheck" onchange="validate()">
     <label class="terms-text" for="termsCheck">
-      <a class="terms-link" href="komcho-market-privacy.html" target="_blank" style="text-decoration:underline;">プライバシーポリシー</a>に同意のうえ送信します
+      <a class="terms-link" href="komcho-market-privacy.html" style="text-decoration:underline;">プライバシーポリシー</a>に同意のうえ送信します
     </label>
   </div>
+  <div class="field-error" id="termsError" style="margin:6px 16px 0;">プライバシーポリシーへの同意が必要です</div>
 
   <!-- 送信ボタン -->
   <div class="submit-wrap">
-    <button class="submit-btn" id="submitBtn" disabled onclick="submitForm()">
+    <button class="submit-btn" id="submitBtn" onclick="submitForm()">
       <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       送信する
     </button>
@@ -443,7 +444,7 @@
     el.classList.toggle('over', len >= 900);
   }
 
-  // バリデーション
+  // バリデーション（入力中はエラー表示だけリアルタイムで消す）
   function validate() {
     const cat   = document.getElementById('categorySelect').value;
     const name  = document.getElementById('nameInput').value.trim();
@@ -452,8 +453,11 @@
     const terms = document.getElementById('termsCheck').checked;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    document.getElementById('submitBtn').disabled =
-      !(cat && name && emailOk && msg.length >= 10 && terms);
+    if (cat) { document.getElementById('categorySelect').classList.remove('error'); document.getElementById('categoryError').classList.remove('visible'); }
+    if (name) { document.getElementById('nameInput').classList.remove('error'); document.getElementById('nameError').classList.remove('visible'); }
+    if (emailOk) { document.getElementById('emailInput').classList.remove('error'); document.getElementById('emailError').classList.remove('visible'); }
+    if (msg.length >= 10) { document.getElementById('messageInput').classList.remove('error'); document.getElementById('messageError').classList.remove('visible'); }
+    if (terms) { document.getElementById('termsError').classList.remove('visible'); }
   }
 
   // 送信処理
@@ -484,6 +488,10 @@
     if (msg.length < 10) {
       document.getElementById('messageInput').classList.add('error');
       document.getElementById('messageError').classList.add('visible');
+      hasError = true;
+    }
+    if (!document.getElementById('termsCheck').checked) {
+      document.getElementById('termsError').classList.add('visible');
       hasError = true;
     }
     if (hasError) return;
